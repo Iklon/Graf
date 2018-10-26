@@ -5,12 +5,13 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.stage.FileChooser;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Controller {
     private FileReader reader;
     private BufferedReader bufferedreader;
-    private List<Point> list;
+    private List<Point> list = new ArrayList<>;
     private XYChart.Series series = new XYChart.Series();
 
     @FXML
@@ -33,6 +34,7 @@ public class Controller {
                         line = line.replace(");", "");
                         line = line.trim();
                         souradnice = line.split(",");
+                        System.out.println("Blbost");
                         System.out.println("Souradnice x: " + Double.parseDouble(souradnice[0]) + " y: " + Double.parseDouble(souradnice[1]));
                         list.add(new Point(Double.parseDouble(souradnice[0]), Double.parseDouble(souradnice[1])));
                     }
